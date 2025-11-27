@@ -26,7 +26,7 @@ bool search_file(const char* url){
     }
     FindClose(hfind);
 }
-int main(){
+int main(void){
     printf("welcome to RLE de/compressor, choose the following commands \n[1] Compressing \n[2] Decompressing \n> ");
     char input[24];
     fgets(input, sizeof(input), stdin);
@@ -41,7 +41,7 @@ int main(){
             char Text_compressor[1024];
             fgets(Text_compressor, sizeof(Text_compressor), stdin);
             Text_compressor[strcspn(Text_compressor, "\n")] = '\0'; 
-            Text_compressor_RLE(Text_compressor);
+            Text_Compressor_RLE(Text_compressor);
         }
         else if (strcmp(text, "2") == 0 || strcmp(text, "Image") == 0){
             printf("now, please Enter the name of the file: ");
@@ -50,7 +50,7 @@ int main(){
             link[strcspn(link, "\n")] = '\0';
             printf("%s\n", link);
             if (search_file(link)){
-                Image_compressor_RLE(link);
+                Image_Compressor_RLE(link);
             }
             else{
                 return 0;
